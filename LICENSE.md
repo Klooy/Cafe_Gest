@@ -26,7 +26,7 @@ Toda copia o uso del software DEBE incluir:
 - Este aviso de copyright completo
 - El archivo LICENSE original
 - Atribución visible al autor original en la interfaz de usuario
-- Enlace al repositorio original: https://github.com/tu-usuario/cafegest
+- Enlace al repositorio original: https://github.com/Klooy/Cafe_Gest
 
 #### 2. **MARCA DE AGUA OBLIGATORIA**
 - La marca de agua "© CaféGest - Equipo CaféGest" DEBE permanecer visible
