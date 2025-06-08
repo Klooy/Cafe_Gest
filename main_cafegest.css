@@ -1,0 +1,790 @@
+:root {
+    --color-brown-900: #2c1810;
+    --color-brown-800: #3d2314;
+    --color-amber-900: #78350f;
+    --color-amber-800: #92400e;
+    --color-amber-700: #b45309;
+    --color-amber-500: #f59e0b;
+    --color-amber-400: #fbbf24;
+    --color-amber-200: #fde68a;
+    --color-amber-100: #fef3c7;
+    --color-amber-50: #fffbeb;
+    --color-stone-900: #1c1917;
+    --color-stone-800: #292524;
+    --color-stone-300: #d6d3d1;
+    --color-stone-100: #f5f5f4;
+    --color-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--color-stone-100);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+.header {
+    background-color: var(--color-stone-900);
+    color: var(--color-white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+.logo i {
+    color: var(--color-amber-500);
+    font-size: 32px;
+}
+
+.logo-text {
+    color: var(--color-amber-500);
+    font-size: 24px;
+    font-weight: 600;
+    min-width: 220px; /* Ancho mínimo para evitar saltos de diseño */
+    display: inline-block;
+}
+
+/* Estilo para el cursor de escritura */
+.cursor {
+    color: var(--color-amber-500);
+    font-size: 24px;
+    font-weight: 600;
+    animation: blink 0.7s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Estilos mejorados para el botón de inicio */
+.home-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--color-amber-700);
+    color: var(--color-white);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(183, 83, 9, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
+
+.home-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+    z-index: -1;
+}
+
+.home-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(183, 83, 9, 0.6);
+    background-color: var(--color-amber-800);
+}
+
+.home-btn:hover::before {
+    left: 100%;
+}
+
+.home-btn i {
+    font-size: 18px;
+    transition: transform 0.5s ease;
+}
+
+.home-btn:hover i {
+    animation: bounce 0.8s ease infinite;
+}
+
+.home-btn span {
+    position: relative;
+}
+
+.home-btn span::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-amber-200);
+    transition: width 0.3s ease;
+}
+
+.home-btn:hover span::after {
+    width: 100%;
+}
+
+/* Efectos adicionales */
+.home-btn .circle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: none;
+    z-index: -1;
+}
+
+.home-btn:active .circle {
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Main container */
+.cafe-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Main menu styles */
+.main-menu {
+    padding: 2rem;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.welcome-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--color-amber-800);
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid var(--color-amber-500);
+    padding-bottom: 1rem;
+    display: inline-block;
+}
+
+.welcome-subtitle {
+    font-size: 18px;
+    color: var(--color-stone-800);
+    margin-bottom: 2rem;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-btn {
+    background-color: var(--color-white);
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 180px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-btn:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-btn i, .menu-btn .icon {
+    font-size: 48px;
+    margin-right: 1.5rem;
+}
+
+.btn-text {
+    text-align: left;
+}
+
+.btn-text h3 {
+    font-size: 22px;
+    margin-bottom: 0.5rem;
+}
+
+.btn-text p {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* Button specific styles */
+.recogida-btn {
+    background: linear-gradient(135deg, var(--color-white) 50%, var(--color-amber-50) 100%);
+    border-bottom: 5px solid var(--color-amber-500);
+}
+
+.recogida-btn i, .recogida-btn .icon {
+    color: var(--color-amber-700);
+}
+
+.recogida-btn .btn-text h3 {
+    color: var(--color-amber-900);
+}
+
+.facturas-btn {
+    background: linear-gradient(135deg, var(--color-white) 50%, #f0f7ff 100%);
+    border-bottom: 5px solid #3b82f6;
+}
+
+.facturas-btn i, .facturas-btn .icon {
+    color: #1d4ed8;
+}
+
+.facturas-btn .btn-text h3 {
+    color: #1e40af;
+}
+
+.insumos-btn {
+    background: linear-gradient(135deg, var(--color-white) 50%, #f0fdf4 100%);
+    border-bottom: 5px solid #22c55e;
+}
+
+.insumos-btn i, .insumos-btn .icon {
+    color: #15803d;
+}
+
+.insumos-btn .btn-text h3 {
+    color: #166534;
+}
+
+/* Button hover effects */
+.menu-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 1;
+}
+
+.menu-btn:hover::before {
+    transform: scale(2);
+    opacity: 0.5;
+}
+
+/* Loading animations */
+.loading-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 3;
+    border-radius: 12px;
+}
+
+.loading-text {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--color-stone-800);
+    font-weight: bold;
+}
+
+/* Animación de recogida de café */
+.coffee-loader {
+    width: 60px;
+    height: 30px;
+    position: relative;
+}
+
+.coffee-beans {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    animation: collect 2s ease-in-out infinite;
+}
+
+.coffee-bean {
+    width: 15px;
+    height: 10px;
+    background-color: var(--color-amber-700);
+    border-radius: 50%;
+    position: absolute;
+    transform: rotate(30deg);
+}
+
+.coffee-bean:nth-child(1) {
+    top: 5px;
+    left: 5px;
+}
+
+.coffee-bean:nth-child(2) {
+    top: 15px;
+    left: 20px;
+}
+
+.coffee-bean:nth-child(3) {
+    top: 0px;
+    left: 25px;
+}
+
+@keyframes collect {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animación de facturas */
+.invoice-loader {
+    width: 60px;
+    height: 40px;
+    position: relative;
+}
+
+.invoice {
+    width: 40px;
+    height: 50px;
+    background-color: #1d4ed8;
+    position: relative;
+    animation: paperMove 2s ease-in-out infinite;
+}
+
+.invoice-line {
+    position: absolute;
+    height: 2px;
+    background-color: #f0f7ff;
+    left: 5px;
+}
+
+.invoice-line:nth-child(1) {
+    width: 30px;
+    top: 10px;
+}
+
+.invoice-line:nth-child(2) {
+    width: 20px;
+    top: 20px;
+}
+
+.invoice-line:nth-child(3) {
+    width: 25px;
+    top: 30px;
+}
+
+@keyframes paperMove {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+/* Animación de insumos */
+.supplies-loader {
+    width: 60px;
+    height: 40px;
+    position: relative;
+}
+
+.supplies-bag {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #15803d;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.supplies-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #15803d;
+    animation: fillBag 2s ease-in-out infinite;
+}
+
+@keyframes fillBag {
+    0%, 100% {
+        height: 10px;
+    }
+    50% {
+        height: 30px;
+    }
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+    color: var(--color-stone-800);
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+        min-width: 180px;
+    }
+    
+    .home-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 14px;
+    }
+    
+    .main-menu {
+        padding: 1.5rem 1rem;
+    }
+    
+    .welcome-title {
+        font-size: 26px;
+    }
+    
+    .welcome-subtitle {
+        font-size: 16px;
+    }
+    
+    .button-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .menu-btn {
+        height: 140px;
+    }
+    
+    .btn-content {
+        padding: 1.5rem;
+    }
+    
+    .menu-btn i, .menu-btn .icon {
+        font-size: 36px;
+        margin-right: 1rem;
+    }
+    
+    .btn-text h3 {
+        font-size: 18px;
+    }
+    
+    .btn-text p {
+        font-size: 14px;
+    }
+}
+
+/* Nuevas animaciones para los botones del menú */
+
+/* Efecto de resplandor al pasar el cursor */
+.menu-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    z-index: 1;
+    transition: box-shadow 0.4s ease;
+}
+
+.menu-btn:hover::after {
+    box-shadow: 0 0 15px 3px rgba(255, 215, 0, 0.3);
+}
+
+/* Efecto de rebote al hacer clic */
+.menu-btn:active {
+    transform: scale(0.95) translateY(-3px);
+    transition: transform 0.2s;
+}
+
+/* Animación de icono flotante */
+.menu-btn .icon {
+    transition: transform 0.5s ease;
+}
+
+.menu-btn:hover .icon {
+    animation: floatIcon 1.5s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+/* Animación de elevación 3D en hover */
+.menu-btn {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transform: translateZ(0);
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.menu-btn:hover {
+    transform: translateY(-8px) translateZ(20px) rotateX(5deg);
+}
+
+/* Efectos específicos para cada botón */
+
+/* Recogida - Efecto de granos cayendo */
+.recogida-btn::before {
+    content: '';
+    background: radial-gradient(circle at center, var(--color-amber-200) 0%, transparent 60%);
+}
+
+.recogida-btn:hover .btn-text h3 {
+    animation: colorPulse 2s infinite alternate;
+}
+
+@keyframes colorPulse {
+    0% {
+        color: var(--color-amber-900);
+    }
+    100% {
+        color: var(--color-amber-700);
+    }
+}
+
+/* Facturas - Efecto de papel */
+.facturas-btn::before {
+    content: '';
+    background: radial-gradient(circle at center, #e0f2fe 0%, transparent 60%);
+}
+
+.facturas-btn:hover .btn-text h3 {
+    animation: paperRustle 0.8s ease infinite;
+}
+
+@keyframes paperRustle {
+    0%, 100% {
+        transform: skew(0deg);
+    }
+    25% {
+        transform: skew(1deg);
+    }
+    75% {
+        transform: skew(-1deg);
+    }
+}
+
+/* Insumos - Efecto de llenado */
+.insumos-btn::before {
+    content: '';
+    background: radial-gradient(circle at center, #dcfce7 0%, transparent 60%);
+}
+
+.insumos-btn:hover .btn-text h3 {
+    animation: growText 2s ease infinite;
+}
+
+@keyframes growText {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Partículas flotantes personalizadas para cada botón */
+.particles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.menu-btn:hover .particles-container {
+    opacity: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 3s ease-in-out infinite;
+    opacity: 0;
+}
+
+/* Partículas específicas para cada botón */
+.recogida-btn .particle {
+    background-color: var(--color-amber-500);
+}
+
+.facturas-btn .particle {
+    background-color: #3b82f6;
+    width: 8px;
+    height: 8px;
+    border-radius: 0;
+    transform: rotate(45deg);
+}
+
+.insumos-btn .particle {
+    background-color: #22c55e;
+    width: 7px;
+    height: 7px;
+    border-radius: 3px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100%) translateX(0) rotate(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100%) translateX(20px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Efecto de destello al hacer clic */
+.flash-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.2s ease;
+}
+
+.menu-btn.flash .flash-overlay {
+    opacity: 1;
+    animation: flashEffect 0.5s forwards;
+}
+
+@keyframes flashEffect {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Efecto de contorno iluminado */
+.menu-btn {
+    position: relative;
+}
+
+.menu-btn::before {
+    border-radius: 12px;
+}
+
+.menu-btn .btn-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
+    transition: box-shadow 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.menu-btn:hover .btn-content::after {
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
