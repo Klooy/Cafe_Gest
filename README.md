@@ -1,4 +1,4 @@
-# CafeGest - Main JavaScript Module
+# CafeGest - Main Module
 
 ## Descripción
 `main_cafegest.js` es el módulo principal de JavaScript para la aplicación **CafeGest**, un sistema de gestión para parcelas cafeteras. Este archivo maneja la interfaz de usuario interactiva del menú principal, incluyendo animaciones, efectos visuales y navegación entre módulos.
