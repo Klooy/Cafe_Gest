@@ -799,8 +799,6 @@ El sistema está desplegado en Netlify con las siguientes configuraciones:
 ```
 
 ### Variables de Entorno
-```javascript
-// Configuración específica para producción
 
 ## 🔄 Actualizaciones y Mantenimiento
 
