@@ -669,8 +669,8 @@ Para obtener ayuda técnica:
 ### Canales de Soporte
 - **Documentación**: Este README completo
 - **Issues**: Crear issue en el repositorio
-- **Email**: soporte@cafegest.com
-- **WhatsApp**: +57 300-123-4567
+- **Email**: mfcorrales26@gmail.com
+- **WhatsApp**: +57 310-622-6041
 
 ### Información de Contacto
 - **Desarrollador**: Equipo CaféGest
