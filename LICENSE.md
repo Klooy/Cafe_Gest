@@ -66,7 +66,7 @@ Cualquier implementación DEBE mostrar claramente:
 ### Para consultas sobre licencias:
 - **Email:** mfcorrales26@gmail.com
 - **WhatsApp:** +57 310-622-6041
-- **Repositorio:** https://github.com/tu-usuario/cafegest
+- **Repositorio:** https://github.com/Klooy/Cafe_Gest
 
 ### Tipos de licencias disponibles:
 1. **MIT Estándar** (esta licencia) - GRATUITA con atribución
