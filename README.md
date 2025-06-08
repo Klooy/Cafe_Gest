@@ -1,106 +1,104 @@
-CaféGest - Sistema Integral de Gestión Cafetera ☕
-CaféGest es un sistema web completo para la gestión integral de parcelas cafeteras, desarrollado específicamente para fincas que requieren un control detallado de la producción, ventas e insumos. El sistema incluye un dashboard principal interactivo y tres módulos especializados para cubrir todas las necesidades operativas de una finca cafetera.
-🌐 Demo en Línea
-🚀 Prueba el Sistema Ahora
-Enlace de Acceso: https://sistema-parcela.netlify.app/index.html
-🔐 Credenciales de Acceso
+# CaféGest - Sistema Integral de Gestión Cafetera ☕
 
-Usuario: admin
-Contraseña: admin123
+**CaféGest** es un sistema web completo para la gestión integral de parcelas cafeteras, desarrollado específicamente para fincas que requieren un control detallado de la producción, ventas e insumos. El sistema incluye un dashboard principal interactivo y tres módulos especializados para cubrir todas las necesidades operativas de una finca cafetera.
 
-El sistema demo está completamente funcional y permite probar todas las características sin necesidad de instalación local.
+## 🌐 Demo en Línea
 
-🏠 Módulos del Sistema
-1. 📊 Dashboard Principal (main_cafegest.js)
+### 🚀 Prueba el Sistema Ahora
+**Enlace de Acceso**: [https://sistema-parcela.netlify.app/index.html](https://sistema-parcela.netlify.app/index.html)
 
-Interfaz de navegación animada con efectos visuales atractivos
-Menú principal interactivo con botones de acceso rápido
-Animaciones avanzadas: Efectos de escritura, ripple, partículas flotantes
-Navegación fluida entre los diferentes módulos
+### 🔐 Credenciales de Acceso
+- **Usuario**: `admin`
+- **Contraseña**: `admin123`
 
-2. ☕ Módulo de Recolección de Café (cosecha_cafe/)
+*El sistema demo está completamente funcional y permite probar todas las características sin necesidad de instalación local.*
 
-Registro detallado de jornadas de recolección
-Múltiples unidades de medida (kilogramos, gramos, arrobas)
-Cálculo automático de ganancias y pagos
-Generación de recibos PDF profesionales
-Sistema de búsqueda y filtrado avanzado
+---
 
-3. 📋 Módulo de Facturas de Venta (factura_venta/)
+## 🏠 Módulos del Sistema
 
-Gestión completa de facturas de venta
-Control de vendedores y clientes
-Exportación a Excel y generación de PDFs
-Sistema de paginación inteligente
-Búsqueda en tiempo real
+### 1. 📊 Dashboard Principal (`main_cafegest.js`)
+- **Interfaz de navegación animada** con efectos visuales atractivos
+- **Menú principal interactivo** con botones de acceso rápido
+- **Animaciones avanzadas**: Efectos de escritura, ripple, partículas flotantes
+- **Navegación fluida** entre los diferentes módulos
 
-4. 📦 Módulo de Insumos (insumos_cafe/)
+### 2. ☕ Módulo de Recolección de Café (`cosecha_cafe/`)
+- **Registro detallado** de jornadas de recolección
+- **Múltiples unidades de medida** (kilogramos, gramos, arrobas)
+- **Cálculo automático** de ganancias y pagos
+- **Generación de recibos PDF** profesionales
+- **Sistema de búsqueda** y filtrado avanzado
 
-Control de inventario de insumos cafeteros
-Gestión de reabastecimientos con trazabilidad
-Registro de usos y consumos
-Alertas de disponibilidad automáticas
-Exportación de datos completa
+### 3. 📋 Módulo de Facturas de Venta (`factura_venta/`)
+- **Gestión completa** de facturas de venta
+- **Control de vendedores y clientes**
+- **Exportación a Excel** y generación de PDFs
+- **Sistema de paginación** inteligente
+- **Búsqueda en tiempo real**
 
-🚀 Características Principales
-✨ Interfaz de Usuario
+### 4. 📦 Módulo de Insumos (`insumos_cafe/`)
+- **Control de inventario** de insumos cafeteros
+- **Gestión de reabastecimientos** con trazabilidad
+- **Registro de usos** y consumos
+- **Alertas de disponibilidad** automáticas
+- **Exportación de datos** completa
 
-Diseño moderno y responsive para todos los dispositivos
-Animaciones fluidas y efectos visuales atractivos
-Navegación intuitiva con menús animados
-Experiencia de usuario optimizada para dispositivos móviles
+## 🚀 Características Principales
 
-🔒 Sistema de Seguridad
+### ✨ Interfaz de Usuario
+- **Diseño moderno y responsive** para todos los dispositivos
+- **Animaciones fluidas** y efectos visuales atractivos
+- **Navegación intuitiva** con menús animados
+- **Experiencia de usuario optimizada** para dispositivos móviles
 
-Autenticación de usuarios con credenciales seguras
-Protección por contraseña para operaciones críticas
-Bloqueo automático tras intentos fallidos
-Contraseña de operaciones predeterminada: cafe2025 (personalizable)
-Sistema de intentos con tiempo de espera
+### 🔒 Sistema de Seguridad
+- **Autenticación de usuarios** con credenciales seguras
+- **Protección por contraseña** para operaciones críticas
+- **Bloqueo automático** tras intentos fallidos
+- **Contraseña de operaciones predeterminada**: `cafe2025` (personalizable)
+- **Sistema de intentos** con tiempo de espera
 
-📄 Generación de Documentos
+### 📄 Generación de Documentos
+- **Recibos PDF profesionales** con diseño corporativo
+- **Facturas de venta** con formato estándar
+- **Exportación a Excel** de todos los módulos
+- **Formatos colombianos** de moneda y fecha
 
-Recibos PDF profesionales con diseño corporativo
-Facturas de venta con formato estándar
-Exportación a Excel de todos los módulos
-Formatos colombianos de moneda y fecha
+### 💾 Almacenamiento de Datos
+- **Persistencia local** con localStorage
+- **Base de datos integrada** para cada módulo
+- **Backup automático** de configuraciones
+- **Recuperación de datos** al reiniciar
 
-💾 Almacenamiento de Datos
+## 🛠️ Tecnologías Utilizadas
 
-Persistencia local con localStorage
-Base de datos integrada para cada módulo
-Backup automático de configuraciones
-Recuperación de datos al reiniciar
+### Frontend
+- **HTML5** - Estructura semántica
+- **CSS3** - Estilos modernos y responsive
+- **JavaScript ES6+** - Lógica de aplicación
+- **Font Awesome** - Iconografía profesional
 
-🛠️ Tecnologías Utilizadas
-Frontend
+### Librerías Externas
+- **SheetJS (XLSX)** - Exportación a Excel
+- **jsPDF** - Generación de documentos PDF
+- **html2canvas** - Captura de contenido HTML
+- **Intl.NumberFormat** - Formateo de moneda colombiana
 
-HTML5 - Estructura semántica
-CSS3 - Estilos modernos y responsive
-JavaScript ES6+ - Lógica de aplicación
-Font Awesome - Iconografía profesional
+### APIs del Navegador
+- **localStorage** - Almacenamiento persistente
+- **Fetch API** - Manejo de recursos
+- **DOM API** - Manipulación de elementos
+- **Event API** - Gestión de eventos
 
-Librerías Externas
+### Despliegue
+- **Netlify** - Hosting y despliegue automático
+- **Git** - Control de versiones
+- **CDN** - Entrega optimizada de contenido
 
-SheetJS (XLSX) - Exportación a Excel
-jsPDF - Generación de documentos PDF
-html2canvas - Captura de contenido HTML
-Intl.NumberFormat - Formateo de moneda colombiana
+## 📁 Estructura del Proyecto
 
-APIs del Navegador
-
-localStorage - Almacenamiento persistente
-Fetch API - Manejo de recursos
-DOM API - Manipulación de elementos
-Event API - Gestión de eventos
-
-Despliegue
-
-Netlify - Hosting y despliegue automático
-Git - Control de versiones
-CDN - Entrega optimizada de contenido
-
-📁 Estructura del Proyecto
+```
 cafegest/
 ├── index.html                    # Página principal con login
 ├── main_cafegest.js             # Módulo principal
@@ -123,188 +121,173 @@ cafegest/
     ├── images/
     ├── fonts/
     └── icons/
-🚀 Instalación y Configuración
-Opción 1: Usar Demo en Línea (Recomendado)
+```
 
-Acceder al sistema: https://sistema-parcela.netlify.app/index.html
-Iniciar sesión con las credenciales:
+## 🚀 Instalación y Configuración
 
-Usuario: admin
-Contraseña: admin123
+### Opción 1: Usar Demo en Línea (Recomendado)
+1. **Acceder al sistema**: [https://sistema-parcela.netlify.app/index.html](https://sistema-parcela.netlify.app/index.html)
+2. **Iniciar sesión** con las credenciales:
+   - Usuario: `admin`
+   - Contraseña: `admin123`
+3. **Explorar los módulos** disponibles
+4. **Probar todas las funcionalidades** sin instalación
 
+### Opción 2: Instalación Local
 
-Explorar los módulos disponibles
-Probar todas las funcionalidades sin instalación
+#### Requisitos del Sistema
+- **Navegador web moderno** (Chrome 60+, Firefox 55+, Safari 12+, Edge 79+)
+- **Servidor web local** (opcional para desarrollo)
+- **Conexión a internet** para CDN de librerías
 
-Opción 2: Instalación Local
-Requisitos del Sistema
+#### Instalación Paso a Paso
 
-Navegador web moderno (Chrome 60+, Firefox 55+, Safari 12+, Edge 79+)
-Servidor web local (opcional para desarrollo)
-Conexión a internet para CDN de librerías
+1. **Descargar el proyecto**
+   ```bash
+   git clone https://github.com/tu-usuario/cafegest.git
+   cd cafegest
+   ```
 
-Instalación Paso a Paso
+2. **Configurar dependencias CDN**
+   
+   Incluir en cada archivo HTML:
+   ```html
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
+   <!-- SheetJS para Excel -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+   
+   <!-- jsPDF para PDFs -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+   ```
 
-Descargar el proyecto
-bashgit clone https://github.com/tu-usuario/cafegest.git
-cd cafegest
+3. **Configuración inicial**
+   
+   Personalizar credenciales y configuraciones:
+   ```javascript
+   // Configurar credenciales de login
+   const LOGIN_CREDENTIALS = {
+       username: "admin",
+       password: "admin123"
+   };
+   
+   // Cambiar contraseña para operaciones críticas
+   const ADMIN_PASSWORD = "cafe2025";
+   
+   // Configurar empresa
+   const NOMBRE_EMPRESA = "Parcela Los Toches";
+   const TELEFONO_EMPRESA = "300-123-4567";
+   ```
 
-Configurar dependencias CDN
-Incluir en cada archivo HTML:
-html<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+4. **Ejecutar la aplicación**
+   - Abrir `index.html` en un navegador
+   - O usar un servidor local como Live Server en VS Code
 
-<!-- SheetJS para Excel -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+### Configuración Avanzada
 
-<!-- jsPDF para PDFs -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-Configuración inicial
-Personalizar credenciales y configuraciones:
-javascript// Configurar credenciales de login
-const LOGIN_CREDENTIALS = {
-    username: "admin",
-    password: "admin123"
-};
-
-// Cambiar contraseña para operaciones críticas
-const ADMIN_PASSWORD = "cafe2025";
-
-// Configurar empresa
-const NOMBRE_EMPRESA = "Parcela Los Toches";
-const TELEFONO_EMPRESA = "300-123-4567";
-
-Ejecutar la aplicación
-
-Abrir index.html en un navegador
-O usar un servidor local como Live Server en VS Code
-
-
-
-Configuración Avanzada
-Personalización de Animaciones
-javascript// En main_cafegest.js
+#### Personalización de Animaciones
+```javascript
+// En main_cafegest.js
 const TYPING_SPEED = 150;        // Velocidad de escritura (ms)
 const ERASING_SPEED = 50;        // Velocidad de borrado (ms)
 const PARTICLE_COUNT = 12;       // Número de partículas por botón
-Configuración de Paginación
-javascript// En cada módulo
+```
+
+#### Configuración de Paginación
+```javascript
+// En cada módulo
 const RECORDS_PER_PAGE = 10;     // Registros por página
 const MAX_PAGINATION_BUTTONS = 5; // Botones de paginación visibles
-Personalización de Moneda
-javascript// Formato de moneda colombiana
+```
+
+#### Personalización de Moneda
+```javascript
+// Formato de moneda colombiana
 const formatoPesosCol = new Intl.NumberFormat('es-CO', {
     style: 'currency',
     currency: 'COP',
     minimumFractionDigits: 0,
     maximumFractionDigits: 0
 });
-📖 Guía de Uso
-Acceso al Sistema
+```
 
-Ingresar al sistema:
+## 📖 Guía de Uso
 
-Demo en línea: https://sistema-parcela.netlify.app/index.html
-Instalación local: Abrir index.html
+### Acceso al Sistema
+1. **Ingresar al sistema**:
+   - **Demo en línea**: [https://sistema-parcela.netlify.app/index.html](https://sistema-parcela.netlify.app/index.html)
+   - **Instalación local**: Abrir `index.html`
 
+2. **Iniciar sesión**:
+   - **Usuario**: `admin`
+   - **Contraseña**: `admin123`
+   - Hacer clic en "Iniciar Sesión"
 
-Iniciar sesión:
+3. **Navegación principal**:
+   - Observar animaciones del título y botones
+   - Seleccionar módulo deseado
+   - Navegación con efectos de carga y transiciones
 
-Usuario: admin
-Contraseña: admin123
-Hacer clic en "Iniciar Sesión"
+### Módulo de Recolección de Café
+1. **Registrar recolección**:
+   - Completar formulario con datos del recolector
+   - Seleccionar unidad de medida
+   - Ingresar cantidad y precio
+   - Guardar registro
 
+2. **Gestionar registros**:
+   - Buscar por nombre, fecha o unidad
+   - Editar registros existentes (requiere contraseña: `cafe2025`)
+   - Eliminar registros (requiere contraseña: `cafe2025`)
+   - Generar recibos PDF individuales
 
-Navegación principal:
+3. **Exportar datos**:
+   - Exportar todos los registros a Excel
+   - Calcular totales por fecha específica
+   - Generar reportes de producción
 
-Observar animaciones del título y botones
-Seleccionar módulo deseado
-Navegación con efectos de carga y transiciones
+### Módulo de Facturas de Venta
+1. **Crear facturas**:
+   - Ingresar datos del vendedor y cliente
+   - Especificar cantidad, unidad y precio
+   - Guardar factura automáticamente
 
+2. **Administrar facturas**:
+   - Buscar facturas por cualquier campo
+   - Navegar con paginación
+   - Editar facturas existentes (requiere contraseña)
+   - Eliminar facturas con confirmación (requiere contraseña)
 
+3. **Generar documentos**:
+   - Vista previa de PDFs en modal
+   - Descargar facturas individuales
+   - Exportar todas las facturas a Excel
 
-Módulo de Recolección de Café
+### Módulo de Insumos
+1. **Gestionar inventario**:
+   - Registrar insumos con cantidad y valor
+   - Control automático de disponibilidad
+   - Actualización de inventarios en tiempo real
 
-Registrar recolección:
+2. **Registrar reabastecimientos**:
+   - Seleccionar insumo a reabastecer
+   - Ingresar cantidad y responsable
+   - Agregar observaciones
+   - Actualización automática de inventario
 
-Completar formulario con datos del recolector
-Seleccionar unidad de medida
-Ingresar cantidad y precio
-Guardar registro
+3. **Controlar usos**:
+   - Registrar consumo de insumos
+   - Validar disponibilidad antes del uso
+   - Mantener historial detallado
+   - Seguimiento por usuario y fecha
 
+## 🔧 Funciones Técnicas Avanzadas
 
-Gestionar registros:
-
-Buscar por nombre, fecha o unidad
-Editar registros existentes (requiere contraseña: cafe2025)
-Eliminar registros (requiere contraseña: cafe2025)
-Generar recibos PDF individuales
-
-
-Exportar datos:
-
-Exportar todos los registros a Excel
-Calcular totales por fecha específica
-Generar reportes de producción
-
-
-
-Módulo de Facturas de Venta
-
-Crear facturas:
-
-Ingresar datos del vendedor y cliente
-Especificar cantidad, unidad y precio
-Guardar factura automáticamente
-
-
-Administrar facturas:
-
-Buscar facturas por cualquier campo
-Navegar con paginación
-Editar facturas existentes (requiere contraseña)
-Eliminar facturas con confirmación (requiere contraseña)
-
-
-Generar documentos:
-
-Vista previa de PDFs en modal
-Descargar facturas individuales
-Exportar todas las facturas a Excel
-
-
-
-Módulo de Insumos
-
-Gestionar inventario:
-
-Registrar insumos con cantidad y valor
-Control automático de disponibilidad
-Actualización de inventarios en tiempo real
-
-
-Registrar reabastecimientos:
-
-Seleccionar insumo a reabastecer
-Ingresar cantidad y responsable
-Agregar observaciones
-Actualización automática de inventario
-
-
-Controlar usos:
-
-Registrar consumo de insumos
-Validar disponibilidad antes del uso
-Mantener historial detallado
-Seguimiento por usuario y fecha
-
-
-
-🔧 Funciones Técnicas Avanzadas
-Sistema de Autenticación
-javascript// Configuración de login
+### Sistema de Autenticación
+```javascript
+// Configuración de login
 const AUTH_CONFIG = {
     LOGIN_CREDENTIALS: {
         username: "admin",
@@ -325,8 +308,11 @@ function verificarAutenticacion() {
     }
     return true;
 }
-Dashboard Principal
-javascript// Animación de escritura
+```
+
+### Dashboard Principal
+```javascript
+// Animación de escritura
 function typeWriter() {
     // Efecto de máquina de escribir
     // Ciclo automático de escritura/borrado
@@ -340,15 +326,21 @@ function createRippleEffect(e, button) {
 function createFloatingParticles(button) {
     // Partículas flotantes animadas
 }
-Sistema de Búsqueda Universal
-javascript// Búsqueda en tiempo real
+```
+
+### Sistema de Búsqueda Universal
+```javascript
+// Búsqueda en tiempo real
 function setupSearch(inputId, tableBodyId, searchFunction) {
     // Configuración de búsqueda para cualquier tabla
     // Filtrado instantáneo
     // Destacado de resultados
 }
-Generación de PDFs
-javascript// Generación de recibos
+```
+
+### Generación de PDFs
+```javascript
+// Generación de recibos
 function generarReciboPDF(registro) {
     // Crear contenido HTML
     // Convertir a PDF con jsPDF
@@ -360,16 +352,23 @@ function mostrarVistaPrevia(contenido) {
     // Modal con vista previa
     // Opción de descargar o cancelar
 }
-Exportación de Datos
-javascript// Exportar a Excel
+```
+
+### Exportación de Datos
+```javascript
+// Exportar a Excel
 function exportarAExcel(datos, nombreArchivo) {
     // Formatear datos
     // Crear libro de Excel
     // Descargar automáticamente
 }
-📊 Estructura de Datos
-Base de Datos Local
-javascript// Estructura de almacenamiento
+```
+
+## 📊 Estructura de Datos
+
+### Base de Datos Local
+```javascript
+// Estructura de almacenamiento
 const DB_STRUCTURE = {
     // Autenticación
     'cafegest_auth_session': null,
@@ -392,8 +391,11 @@ const DB_STRUCTURE = {
     'cafegest_db_intentos_fallidos': 0,
     'cafegest_db_tiempo_bloqueado': null
 };
-Modelo de Datos - Recolección
-javascript{
+```
+
+### Modelo de Datos - Recolección
+```javascript
+{
     id: Number,                    // ID único
     nombreRecolector: String,      // Nombre del recolector
     cantidad: Number,              // Cantidad recolectada
@@ -402,8 +404,11 @@ javascript{
     ganancia: Number,             // Ganancia calculada
     valorPorUnidad: Number        // Precio por unidad
 }
-Modelo de Datos - Facturas
-javascript{
+```
+
+### Modelo de Datos - Facturas
+```javascript
+{
     id: Number,                   // ID único
     vendedor: String,            // Nombre del vendedor
     cliente: String,             // Nombre del cliente
@@ -413,8 +418,11 @@ javascript{
     fecha: String,               // Fecha de la factura
     total: Number                // Total calculado
 }
-Modelo de Datos - Insumos
-javascript{
+```
+
+### Modelo de Datos - Insumos
+```javascript
+{
     id: Number,                  // ID único
     nombre: String,              // Nombre del insumo
     cantidad: Number,            // Cantidad en kg
@@ -422,9 +430,13 @@ javascript{
     fecha: String,               // Fecha de registro
     disponibilidad: String       // "Disponible" | "No Disponible"
 }
-🔐 Sistema de Seguridad
-Configuración de Seguridad
-javascriptconst SECURITY_CONFIG = {
+```
+
+## 🔐 Sistema de Seguridad
+
+### Configuración de Seguridad
+```javascript
+const SECURITY_CONFIG = {
     // Credenciales de acceso principal
     LOGIN_CREDENTIALS: {
         username: "admin",
@@ -446,8 +458,11 @@ javascriptconst SECURITY_CONFIG = {
     // Configuración de sesión
     SESSION_TIMEOUT: 4 * 60 * 60 * 1000 // 4 horas
 };
-Funciones de Seguridad
-javascript// Verificar credenciales de login
+```
+
+### Funciones de Seguridad
+```javascript
+// Verificar credenciales de login
 function verificarLogin(username, password) {
     return username === SECURITY_CONFIG.LOGIN_CREDENTIALS.username && 
            password === SECURITY_CONFIG.LOGIN_CREDENTIALS.password;
@@ -473,9 +488,13 @@ function cerrarSesion() {
     localStorage.removeItem('cafegest_auth_time');
     window.location.href = 'index.html';
 }
-📱 Diseño Responsive
-Breakpoints CSS
-css/* Móvil */
+```
+
+## 📱 Diseño Responsive
+
+### Breakpoints CSS
+```css
+/* Móvil */
 @media (max-width: 480px) {
     .container { padding: 10px; }
     .btn-group { flex-direction: column; }
@@ -495,18 +514,21 @@ css/* Móvil */
     .grid-layout { grid-template-columns: repeat(3, 1fr); }
     .login-form { width: 400px; }
 }
-Adaptaciones Móviles
+```
 
-Botones táctiles optimizados (mínimo 44px)
-Formularios responsivos con campos apilados
-Tablas horizontales con scroll en móviles
-Menús colapsables para navegación
-Modales fullscreen en pantallas pequeñas
-Login responsive para todos los dispositivos
+### Adaptaciones Móviles
+- **Botones táctiles** optimizados (mínimo 44px)
+- **Formularios responsivos** con campos apilados
+- **Tablas horizontales** con scroll en móviles
+- **Menús colapsables** para navegación
+- **Modales fullscreen** en pantallas pequeñas
+- **Login responsive** para todos los dispositivos
 
-🎨 Personalización Visual
-Variables CSS Globales
-css:root {
+## 🎨 Personalización Visual
+
+### Variables CSS Globales
+```css
+:root {
     /* Colores principales */
     --primary-color: #8B4513;
     --secondary-color: #D2691E;
@@ -541,8 +563,11 @@ css:root {
     --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     --transition: all 0.3s ease;
 }
-Temas Personalizables
-javascript// Configuración de temas
+```
+
+### Temas Personalizables
+```javascript
+// Configuración de temas
 const THEMES = {
     default: {
         primary: '#8B4513',
@@ -563,57 +588,58 @@ const THEMES = {
         loginBg: 'linear-gradient(135deg, #A0522D, #DEB887)'
     }
 };
-🔧 Solución de Problemas
-Problemas Comunes
-1. No puedo acceder al sistema
-Síntomas: Login no funciona o página no carga
-Soluciones:
+```
 
-Verificar conexión a internet
-Usar las credenciales correctas: admin / admin123
-Limpiar cache del navegador
-Intentar en modo incógnito
-Verificar que el enlace sea correcto: https://sistema-parcela.netlify.app/index.html
+## 🔧 Solución de Problemas
 
-2. Los datos no se guardan
-Síntomas: Los registros desaparecen al recargar la página
-Soluciones:
+### Problemas Comunes
 
-Verificar que localStorage esté habilitado
-Comprobar que no esté en modo incógnito
-Verificar permisos del navegador
-Limpiar cookies y cache
+#### 1. No puedo acceder al sistema
+**Síntomas**: Login no funciona o página no carga
+**Soluciones**:
+- Verificar conexión a internet
+- Usar las credenciales correctas: `admin` / `admin123`
+- Limpiar cache del navegador
+- Intentar en modo incógnito
+- Verificar que el enlace sea correcto: [https://sistema-parcela.netlify.app/index.html](https://sistema-parcela.netlify.app/index.html)
 
-3. Las librerías no cargan
-Síntomas: Funciones de PDF o Excel no funcionan
-Soluciones:
+#### 2. Los datos no se guardan
+**Síntomas**: Los registros desaparecen al recargar la página
+**Soluciones**:
+- Verificar que localStorage esté habilitado
+- Comprobar que no esté en modo incógnito
+- Verificar permisos del navegador
+- Limpiar cookies y cache
 
-Verificar conexión a internet
-Comprobar URLs de CDN
-Usar versiones alternativas de las librerías
-Recargar la página completamente
+#### 3. Las librerías no cargan
+**Síntomas**: Funciones de PDF o Excel no funcionan
+**Soluciones**:
+- Verificar conexión a internet
+- Comprobar URLs de CDN
+- Usar versiones alternativas de las librerías
+- Recargar la página completamente
 
-4. Problemas de rendimiento
-Síntomas: La aplicación se vuelve lenta
-Soluciones:
+#### 4. Problemas de rendimiento
+**Síntomas**: La aplicación se vuelve lenta
+**Soluciones**:
+- Limpiar datos antiguos
+- Reducir registros por página
+- Optimizar búsquedas
+- Usar navegador actualizado
+- Cerrar pestañas innecesarias
 
-Limpiar datos antiguos
-Reducir registros por página
-Optimizar búsquedas
-Usar navegador actualizado
-Cerrar pestañas innecesarias
+#### 5. Errores de formato
+**Síntomas**: Monedas o fechas mal formateadas
+**Soluciones**:
+- Verificar configuración regional
+- Actualizar navegador
+- Limpiar cache del navegador
+- Verificar zona horaria
 
-5. Errores de formato
-Síntomas: Monedas o fechas mal formateadas
-Soluciones:
+### Comandos de Depuración
 
-Verificar configuración regional
-Actualizar navegador
-Limpiar cache del navegador
-Verificar zona horaria
-
-Comandos de Depuración
-javascript// Verificar estado de autenticación
+```javascript
+// Verificar estado de autenticación
 console.log('Sesión activa:', localStorage.getItem('cafegest_auth_session'));
 console.log('Tiempo de sesión:', localStorage.getItem('cafegest_auth_time'));
 
@@ -642,19 +668,22 @@ Object.keys(localStorage).forEach(key => {
 // Verificar estado de seguridad
 console.log('Intentos fallidos:', localStorage.getItem('cafegest_db_intentos_fallidos'));
 console.log('Tiempo de bloqueo:', localStorage.getItem('cafegest_db_tiempo_bloqueado'));
-🚀 Optimización y Rendimiento
-Mejores Prácticas Implementadas
+```
 
-Lazy loading de contenido pesado
-Paginación para grandes volúmenes de datos
-Debouncing en funciones de búsqueda
-Event delegation para manejo eficiente de eventos
-Memory cleanup para prevenir memory leaks
-Compresión de assets en Netlify
-Cache optimizado para recursos estáticos
+## 🚀 Optimización y Rendimiento
 
-Configuración de Rendimiento
-javascript// Configuración de paginación
+### Mejores Prácticas Implementadas
+- **Lazy loading** de contenido pesado
+- **Paginación** para grandes volúmenes de datos
+- **Debouncing** en funciones de búsqueda
+- **Event delegation** para manejo eficiente de eventos
+- **Memory cleanup** para prevenir memory leaks
+- **Compresión de assets** en Netlify
+- **Cache optimizado** para recursos estáticos
+
+### Configuración de Rendimiento
+```javascript
+// Configuración de paginación
 const PERFORMANCE_CONFIG = {
     RECORDS_PER_PAGE: 10,           // Registros por página
     SEARCH_DEBOUNCE_TIME: 300,      // Tiempo de espera para búsqueda (ms)
@@ -663,8 +692,11 @@ const PERFORMANCE_CONFIG = {
     CLEANUP_INTERVAL: 5 * 60 * 1000, // Limpieza cada 5 minutos
     SESSION_CHECK_INTERVAL: 60 * 1000 // Verificar sesión cada minuto
 };
-Monitoreo de Rendimiento
-javascript// Medir tiempo de carga
+```
+
+### Monitoreo de Rendimiento
+```javascript
+// Medir tiempo de carga
 function measurePerformance(operacion, funcion) {
     const inicio = performance.now();
     const resultado = funcion();
@@ -721,7 +753,54 @@ function analizarVentas() {
             facturas.reduce((sum, f) => sum + f.total, 0) / facturas.length : 0
     };
 }
+
+// Métricas de uso del sistema
+function calcularMetricasUso() {
+    return {
+        tiempoSesion: Date.now() - localStorage.getItem('cafegest_auth_time'),
+        modulosUsados: getModulosUsados(),
+        operacionesRealizadas: getOperacionesRealizadas(),
+        datosAlmacenados: Object.keys(localStorage).filter(k => k.startsWith('cafegest_')).length
+    };
+}
 ```
+
+## 🌐 Despliegue y Hosting
+
+### Configuración de Netlify
+El sistema está desplegado en Netlify con las siguientes configuraciones:
+
+```toml
+# netlify.toml
+[build]
+  publish = "."
+  
+[build.environment]
+  NODE_VERSION = "18"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' cdnjs.cloudflare.com"
+
+[[redirects]]
+  from = "/admin"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+```
+
+### Variables de Entorno
+```javascript
+// Configuración específica para producción
 
 ## 🔄 Actualizaciones y Mantenimiento
 
