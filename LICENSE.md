@@ -2,7 +2,7 @@
 
 ## Copyright © 2025 Equipo CaféGest
 
-**Autor Principal:** [Tu Nombre]  
+**Autor Principal:** Michael Felipe Corrales Florez  
 **Email:** mfcorrales26@gmail.com  
 **Sistema:** CaféGest - Sistema Integral de Gestión Cafetera  
 **Versión:** 1.5.0  
