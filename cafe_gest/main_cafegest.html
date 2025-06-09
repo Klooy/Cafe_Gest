@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcela Los Toches - Sistema de Administración</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="main_cafegest.css">
+    <!-- Puedes colocar el nuevo CSS en main_cafegest.css o crear un archivo separado -->
+</head>
+    <meta name="copyright" content="© 2025 Equipo CaféGest">
+   <meta name="author" content="Equipo CaféGest">
+<body>
+    <div class="cafe-container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-coffee"></i>
+                <span class="logo-text" id="typing-text"></span>
+                <span class="cursor">|</span>
+            </div>
+            <a href="../menu.html" class="home-btn" id="home-button">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </a>
+        </header>
+
+        <div class="main-menu">
+            <h1 class="welcome-title">Sistema de Administración</h1>
+            <p class="welcome-subtitle">Seleccione una opción para continuar</p>
+            
+            <div class="button-container">
+                <a href="components/cosecha_cafe/cosecha.html" class="menu-btn recogida-btn" id="btn-recogida">
+                    <div class="btn-content">
+                        <span class="icon">🌱</span>
+                        <div class="btn-text">
+                            <h3>Recogida</h3>
+                            <p>Gestión de cosecha de café</p>
+                        </div>
+                    </div>
+                    <div class="loading-container" id="recogida-loading">
+                        <div class="coffee-loader">
+                            <div class="coffee-beans">
+                                <div class="coffee-bean"></div>
+                                <div class="coffee-bean"></div>
+                                <div class="coffee-bean"></div>
+                            </div>
+                        </div>
+                        <div class="loading-text">Cargando sistema...</div>
+                    </div>
+                    <!-- Las capas para partículas y flash se añadirán con JavaScript -->
+                </a>
+                
+                <a href="components/factura_venta/factura_venta.html" class="menu-btn facturas-btn" id="btn-facturas">
+                    <div class="btn-content">
+                        <span class="icon">📝</span>
+                        <div class="btn-text">
+                            <h3>Facturas</h3>
+                            <p>Gestión de documentos de venta</p>
+                        </div>
+                    </div>
+                    <div class="loading-container" id="facturas-loading">
+                        <div class="invoice-loader">
+                            <div class="invoice">
+                                <div class="invoice-line"></div>
+                                <div class="invoice-line"></div>
+                                <div class="invoice-line"></div>
+                            </div>
+                        </div>
+                        <div class="loading-text">Cargando sistema...</div>
+                    </div>
+                    <!-- Las capas para partículas y flash se añadirán con JavaScript -->
+                </a>
+                
+                <a href="components/insumos_cafe/insumos_cafe.html" class="menu-btn insumos-btn" id="btn-insumos">
+                    <div class="btn-content">
+                        <span class="icon">💼</span>
+                        <div class="btn-text">
+                            <h3>Insumos</h3>
+                            <p>Control de inventario y suministros</p>
+                        </div>
+                    </div>
+                    <div class="loading-container" id="insumos-loading">
+                        <div class="supplies-loader">
+                            <div class="supplies-bag">
+                                <div class="supplies-fill"></div>
+                            </div>
+                        </div>
+                        <div class="loading-text">Cargando sistema...</div>
+                    </div>
+                    <!-- Las capas para partículas y flash se añadirán con JavaScript -->
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            Sistema de Administración de Inventarios &copy; 2025
+        </footer>
+    </div>
+
+    <script src="main_cafegest.js"></script>
+    <script src="cafegest.js"></script>
+</body>
+</html>

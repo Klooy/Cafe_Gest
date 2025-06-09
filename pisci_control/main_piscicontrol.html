@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PisciControl - Sistema de Inventario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="main_piscicontrol.css">
+</head>
+<body>
+    <!-- Botón para móviles -->
+    <button class="mobile-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <i class="fas fa-fish logo-icon"></i>
+                <h2 class="sidebar-title">PisciControl</h2>
+            </div>
+            <button class="toggle-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+
+        <!-- Categoría: Uso del Personal -->
+        <div class="category">
+            <div class="category-header">
+                <i class="fas fa-users category-icon"></i>
+                <span class="category-name">Uso del Personal</span>
+                <i class="fas fa-chevron-right category-arrow"></i>
+            </div>
+            <div class="menu-items">
+                <a href="#inventario-pesca" class="menu-item" data-tooltip="Inventario Pesca Diaria">
+                    <i class="fas fa-fish menu-icon"></i>
+                    <span class="menu-text">Inventario Pesca Diaria</span>
+                </a>
+                <a href="#insumos-crianza" class="menu-item" data-tooltip="Insumos de Uso Diario">
+                    <i class="fas fa-drumstick-bite menu-icon"></i>
+                    <span class="menu-text">Insumos Para Crianza</span>
+                </a>
+                <a href="#facturacion" class="menu-item" data-tooltip="Facturación de Ventas">
+                    <i class="fas fa-file-invoice-dollar menu-icon"></i>
+                    <span class="menu-text">Facturación de Ventas</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Categoría: Uso Administrativo -->
+        <div class="category">
+            <div class="category-header">
+                <i class="fas fa-user-tie category-icon"></i>
+                <span class="category-name">Uso Administrativo</span>
+                <i class="fas fa-chevron-right category-arrow"></i>
+            </div>
+            <div class="menu-items">
+                <a href="#inventario-cosechas" class="menu-item" data-tooltip="Inventario Cosechas">
+                    <i class="fas fa-warehouse menu-icon"></i>
+                    <span class="menu-text">Inventario Cosechas</span>
+                </a>
+                <a href="#insumos-mantenimiento" class="menu-item" data-tooltip="Insumos para Mantenimiento">
+                    <i class="fas fa-tools menu-icon"></i>
+                    <span class="menu-text">Insumos para Mantenimiento</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Botón de salir -->
+        <div class="category">
+            <a href="#" class="menu-item" id="btn-salir" data-tooltip="Salir">
+                <i class="fas fa-sign-out-alt menu-icon"></i>
+                <span class="menu-text">Salir</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Contenido principal - Solo para demostración -->
+    <div class="content">
+        <h1>Bienvenido a PisciControl</h1>
+        <p>Seleccione una opción del menú lateral.</p>
+    </div>
+
+    <script src="main_piscicontrol.js"></script>
+</body>
+</html>

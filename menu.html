@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcela Los Toches - Sistema de Administración</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('img.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+        }
+        
+        h1 {
+            color: #2c5e1a;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid #88c87a;
+            padding-bottom: 1rem;
+        }
+        
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            padding: 1.5rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            min-height: 80px;
+        }
+        
+        .btn-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            z-index: 2;
+        }
+        
+        .btn-piscicultura {
+            background-color: #1a6b9e;
+            box-shadow: 0 4px 0 #0d4e76;
+        }
+        
+        .btn-piscicultura:hover {
+            background-color: #1980c1;
+            transform: translateY(-2px);
+        }
+        
+        .btn-caficultura {
+            background-color: #8b4513;
+            box-shadow: 0 4px 0 #5e2f0d;
+        }
+        
+        .btn-caficultura:hover {
+            background-color: #a0521b;
+            transform: translateY(-2px);
+        }
+        
+        .btn:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+        
+        .icon {
+            font-size: 1.5rem;
+        }
+        
+        footer {
+            margin-top: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Animaciones de carga */
+        .loading-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: inherit;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 3;
+        }
+        
+        .loading-text {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Animación del pez mejorada */
+        .fish-loader {
+            width: 150px;
+            height: 40px;
+            position: relative;
+        }
+        
+        .fish {
+            position: absolute;
+            width: 60px;
+            height: 30px;
+            animation: swim 3s linear infinite;
+        }
+        
+        .fish-body {
+            width: 40px;
+            height: 30px;
+            background-color: white;
+            border-radius: 50% on the left, and a point on the right;
+            position: relative;
+            border-radius: 50% 10px 10px 50%;
+            transform-origin: right center;
+        }
+        
+        .fish-eye {
+            width: 6px;
+            height: 6px;
+            background-color: #1a6b9e;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            left: 10px;
+        }
+        
+        .fish-tail {
+            position: absolute;
+            right: -15px;
+            top: 0;
+            width: 20px;
+            height: 30px;
+            overflow: hidden;
+        }
+        
+        .tail {
+            width: 20px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            transform-origin: left center;
+            position: absolute;
+            left: -10px;
+            animation: tailWag 0.5s ease-in-out infinite alternate;
+        }
+        
+        .bubble {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            opacity: 0;
+            animation: bubbleRise 2s ease-out infinite;
+        }
+        
+        .bubble:nth-child(1) {
+            width: 10px;
+            height: 10px;
+            left: 10px;
+            top: 40px;
+            animation-delay: 0.2s;
+        }
+        
+        .bubble:nth-child(2) {
+            width: 6px;
+            height: 6px;
+            left: 25px;
+            top: 45px;
+            animation-delay: 0.6s;
+        }
+        
+        .bubble:nth-child(3) {
+            width: 8px;
+            height: 8px;
+            left: 40px;
+            top: 42px;
+            animation-delay: 1s;
+        }
+        
+        @keyframes swim {
+            0% {
+                left: 0;
+                transform: scaleX(1);
+            }
+            45% {
+                transform: scaleX(1);
+            }
+            50% {
+                left: calc(100% - 60px);
+                transform: scaleX(-1);
+            }
+            95% {
+                transform: scaleX(-1);
+            }
+            100% {
+                left: 0;
+                transform: scaleX(1);
+            }
+        }
+        
+        @keyframes tailWag {
+            from {
+                transform: rotate(-20deg);
+            }
+            to {
+                transform: rotate(20deg);
+            }
+        }
+        
+        @keyframes bubbleRise {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-40px);
+                opacity: 0;
+            }
+        }
+        
+        /* Animación de la taza de café */
+        .coffee-loader {
+            width: 60px;
+            height: 30px;
+            position: relative;
+        }
+        
+        .coffee-cup {
+            width: 40px;
+            height: 30px;
+            border: 3px solid #fff;
+            border-radius: 0 0 15px 15px;
+            position: relative;
+        }
+        
+        .coffee-handle {
+            width: 10px;
+            height: 15px;
+            border: 3px solid #fff;
+            border-left: none;
+            border-radius: 0 10px 10px 0;
+            position: absolute;
+            right: -13px;
+            top: 5px;
+        }
+        
+        .coffee-liquid {
+            width: 40px;
+            height: 0;
+            background-color: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 0 0 12px 12px;
+            animation: fill 2s ease-in-out infinite;
+        }
+        
+        .coffee-steam {
+            position: absolute;
+            top: -15px;
+            left: 5px;
+        }
+        
+        .steam {
+            width: 8px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            opacity: 0;
+            position: absolute;
+            animation: steam 1s ease-out infinite;
+        }
+        
+        .steam:nth-child(1) {
+            left: 0;
+            animation-delay: 0.2s;
+        }
+        
+        .steam:nth-child(2) {
+            left: 12px;
+            animation-delay: 0.4s;
+        }
+        
+        .steam:nth-child(3) {
+            left: 24px;
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes fill {
+            0%, 20% {
+                height: 0;
+            }
+            80%, 100% {
+                height: 30px;
+            }
+        }
+        
+        @keyframes steam {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-15px);
+                opacity: 0;
+            }
+        }
+        
+        /* NUEVO - Estilos actualizados para el botón de logout */
+        .logout-container {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .btn-logout {
+            padding: 0.8rem 1.5rem;
+            background-color: #f5f5f5;
+            color: #e63946;
+            border: 2px solid #e63946;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+        
+        .btn-logout:hover {
+            background-color: #e63946;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-logout:active {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logout-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-logout:hover .logout-icon {
+            transform: rotate(90deg);
+        }
+        
+        /* Efecto ondulado al hacer hover */
+        .btn-logout::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.6s ease-out;
+        }
+        
+        .btn-logout:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+                width: 85%;
+            }
+            
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .btn {
+                padding: 1.2rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .fish-loader {
+                width: 120px;
+            }
+            
+            .coffee-loader {
+                width: 80px;
+            }
+            
+            .btn-logout {
+                max-width: 180px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+                width: 90%;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1.2rem;
+            }
+            
+            .btn {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .loading-text {
+                font-size: 0.8rem;
+            }
+            
+            .btn-logout {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+                max-width: 180px;
+            }
+            
+            .logout-icon {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parcela Los Toches</h1>
+        <div class="buttons-container">
+            <a href="#" class="btn btn-piscicultura" id="btn-piscicultura">
+                <div class="btn-content">
+                    <span class="icon">🐟</span>
+                    Sistema de Piscicultura
+                </div>
+                <div class="loading-container" id="pez-loading">
+                    <div class="fish-loader">
+                        <div class="fish">
+                            <div class="fish-body">
+                                <div class="fish-eye"></div>
+                            </div>
+                            <div class="fish-tail">
+                                <div class="tail"></div>
+                            </div>
+                        </div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                    </div>
+                    <div class="loading-text">Cargando sistema...</div>
+                </div>
+            </a>
+            <a href="#" class="btn btn-caficultura" id="btn-caficultura">
+                <div class="btn-content">
+                    <span class="icon">☕</span>
+                    Sistema de Caficultura
+                </div>
+                <div class="loading-container" id="cafe-loading">
+                    <div class="coffee-loader">
+                        <div class="coffee-cup">
+                            <div class="coffee-handle"></div>
+                            <div class="coffee-liquid"></div>
+                        </div>
+                        <div class="coffee-steam">
+                            <div class="steam"></div>
+                            <div class="steam"></div>
+                            <div class="steam"></div>
+                        </div>
+                    </div>
+                    <div class="loading-text">Cargando sistema...</div>
+                </div>
+            </a>
+        </div>
+        <div class="logout-container">
+            <button id="btn-logout" class="btn-logout">
+                <span class="logout-icon">🔒</span>
+                Cerrar Sesión
+            </button>
+        </div>
+    </div>
+    <footer>
+        Sistema de Administración de Inventarios &copy; 2025
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnPiscicultura = document.getElementById('btn-piscicultura');
+            const btnCaficultura = document.getElementById('btn-caficultura');
+            const pezLoading = document.getElementById('pez-loading');
+            const cafeLoading = document.getElementById('cafe-loading');
+            const btnPisciculturaContent = btnPiscicultura.querySelector('.btn-content');
+            const btnCaficulturaContent = btnCaficultura.querySelector('.btn-content');
+            
+            btnPiscicultura.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Ocultar contenido original y mostrar animación
+                btnPisciculturaContent.style.display = 'none';
+                pezLoading.style.display = 'flex';
+                
+                // Simular carga y redirección
+                setTimeout(function() {
+                    window.location.href = 'Pisci_control/main_piscicontrol.html';
+                }, 2500);
+            });
+            
+            btnCaficultura.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Ocultar contenido original y mostrar animación
+                btnCaficulturaContent.style.display = 'none';
+                cafeLoading.style.display = 'flex';
+                
+                // Simular carga y redirección
+                setTimeout(function() {
+                    window.location.href = 'Cafe_Gest/main_cafegest.html';
+                }, 2500);
+            });
+            
+            const btnLogout = document.getElementById('btn-logout');
+            
+            // Verificar si existe el usuario en localStorage
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (!currentUser || !currentUser.isLoggedIn) {
+                // Si no hay sesión, redirigir al login
+                window.location.href = 'index.html';
+            }
+            
+            // Función para cerrar sesión
+            btnLogout.addEventListener('click', function() {
+                // Eliminar datos de sesión
+                localStorage.removeItem('currentUser');
+                
+                // Redirigir al login
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

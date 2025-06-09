@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaféGest - Facturas de Venta</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="factura_venta.css">
+</head>
+    <meta name="copyright" content="© 2025 Equipo CaféGest">
+   <meta name="author" content="Equipo CaféGest">
+<body>
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">
+                <i class="fas fa-file-invoice"></i>
+                Facturas de Venta
+            </h1>
+            <!-- El botón de volver será eliminado por el script del archivo principal -->
+            <button type="button" class="back-button" onclick="window.location.href='../../main_cafegest.html'">
+                <i class="fas fa-arrow-left"></i>
+                Volver al panel
+            </button>
+        </div>
+
+        <!-- Form Card -->
+        <div class="card">
+            <h2 class="card-title">
+                <i class="fas fa-plus-circle"></i>
+                Registrar Nueva Factura de Venta
+            </h2>
+
+            <div id="messageBox" class="message"></div>
+
+            <form id="facturaForm" onsubmit="return false;">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nombreVendedor">Nombre del Vendedor:</label>
+                        <input type="text" id="nombreVendedor" name="nombreVendedor" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nombreCliente">Nombre del Cliente:</label>
+                        <input type="text" id="nombreCliente" name="nombreCliente" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" id="cantidad" name="cantidad" step="0.01" min="0" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="unidad">Unidad:</label>
+                        <select id="unidad" name="unidad" required>
+                            <option value="gramos">Gramos</option>
+                            <option value="kilogramos" selected>Kilogramos</option>
+                            <option value="arrobas">Arrobas</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="precioVenta">Precio de Venta Total ($):</label>
+                        <input type="number" id="precioVenta" name="precioVenta" step="0.01" min="0" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fechaVenta">Fecha de Venta:</label>
+                        <input type="date" id="fechaVenta" name="fechaVenta" required>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button type="button" id="guardarBtn" class="btn btn-primary">
+                        <i class="fas fa-save"></i>
+                        Guardar Factura
+                    </button>
+                    <button type="reset" class="btn btn-secondary">
+                        <i class="fas fa-broom"></i>
+                        Limpiar Campos
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Table Card -->
+        <div class="card">
+            <div class="table-header">
+                <h2 class="card-title">
+                    <i class="fas fa-list"></i>
+                    Registro de Facturas
+                </h2>
+                
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar...">
+                    <button class="btn btn-export" id="exportBtn">
+                        <i class="fas fa-file-excel"></i>
+                        Exportar Excel
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table id="facturasTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Vendedor</th>
+                            <th>Cliente</th>
+                            <th>Cantidad</th>
+                            <th>Unidad</th>
+                            <th>Fecha</th>
+                            <th>Precio Venta ($)</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="facturasTableBody">
+                        <!-- Data will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+                
+                <div id="emptyState" class="empty-state">
+                    <i class="fas fa-file-invoice"></i>
+                    <h3>No hay facturas registradas</h3>
+                    <p>Utilice el formulario para crear una nueva factura de venta.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- PDF Preview Modal -->
+    <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2>Vista Previa de Factura</h2>
+            
+            <div id="facturaPreview" class="factura-preview">
+                <!-- PDF content will be inserted here by JavaScript -->
+            </div>
+            
+            <div class="modal-actions">
+                <button id="descargarPdfBtn" class="btn btn-pdf">
+                    <i class="fas fa-file-pdf"></i>
+                    Descargar PDF
+                </button>
+                <button id="cerrarModalBtn" class="btn btn-secondary">
+                    <i class="fas fa-times"></i>
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="factura_venta.js"></script>
+    <script src="..\..\cafegest.js"></script>
+</body>
+</html>
